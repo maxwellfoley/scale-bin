@@ -1,0 +1,24 @@
+#!/bin/bash
+
+OUTPUT=merged.pdf
+
+if [ -n "$2" ]; then
+    OUTPUT="$2"
+    # echo $OUTPUT
+    # exit
+fi
+
+SRCS=
+
+if [ -z "$1" ]; then
+    echo "Need to pass list of pdfs to combine"
+    exit
+else :
+    SRCS="$@"
+    echo "$1"
+fi
+
+exit
+
+gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=merged.pdf source1.pdf source2.pdf source3.pdf
+
