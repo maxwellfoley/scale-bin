@@ -1,0 +1,13 @@
+#!/bin/bash
+
+
+DATAFILE=_data/2019/week/05.yml 
+
+LINKLIMIT=14
+
+if [ -n "$1" ]; then
+    DATAFILE="$1"
+fi
+
+grep url "$DATAFILE" | sed -e 's/^  - url: //' | \
+    head -n "$LINKLIMIT"
