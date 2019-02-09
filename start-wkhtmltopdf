@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#
+# @rejon 2019-02-09
+# Consider if will continue to use this
+# if fonts not right check out alpine images like the top
+# image that has updates with fonts, etc
+# 
+# https://hub.docker.com/search?q=wkhtmltopdf&type=image
+#
+
+
+# Using this
+# https://hub.docker.com/r/cs2ag/docker-wkhtmltopdf
+
+
+docker pull cs2ag/docker-wkhtmltopdf
+
+docker run -d \
+    --volume /tmp/wkhtmltopdf:/tmp/wkhtmltopdf \
+    --name cs2wkhtmltopdf \
+    cs2ag/docker-wkhtmltopdf
+
+
+# docker container exec cs2wkhtmltopdf wkhtmltopdf "https://www.google.com/" /tmp/wkhtmltopdf/file.pdf

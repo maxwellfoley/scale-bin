@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Get a list of URLs
+
+# Use previous package service.fabricatorz.com or other make pdf
+
+# save the pdf to disk in appropriae folder
+# like https://github.com/FabricatorzLegacy/html2pdf/blob/master/index.php
+
+
+# https://hub.docker.com/r/cs2ag/docker-wkhtmltopdf
+
+# docker pull cs2ag/docker-wkhtmltopdf
+
+docker stop cs2wkhtmltopdf
+docker rm cs2wkhtmltopdf
+
+
+# docker container exec cs2wkhtmltopdf wkhtmltopdf "https://www.google.com/" /tmp/wkhtmltopdf/file.pdf

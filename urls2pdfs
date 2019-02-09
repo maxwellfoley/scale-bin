@@ -4,4 +4,26 @@
 
 # Use previous package service.fabricatorz.com or other make pdf
 
-# save the pdf to disk in appropriae folder
+# save the pdf to disk in appropriate folder
+# like https://github.com/FabricatorzLegacy/html2pdf/blob/master/index.php
+
+
+# https://hub.docker.com/r/cs2ag/docker-wkhtmltopdf
+
+
+DOCKER_EXISTS=$(which docker)
+
+WKHTML2PDF_EXISTS=$(docker ps | grep cs2wkhtmltopdf | awk '{print $1}')
+
+[ -z "$DOCKER_EXISTS" ] && echo "Docker does not exist." && \
+    exit 1
+
+[ -z "$WKHTML2PDF_EXISTS" ] && echo "wkhtml2pdf not running." && \
+    exit 1
+
+
+
+
+
+
+echo "HERE"
